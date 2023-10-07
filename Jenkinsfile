@@ -36,7 +36,7 @@ pipeline {
                 // Serve the Angular app locally on port 4200
                script {
                try {
-                sh 'nohup npm start &'
+                sh './deploy.sh &'
                 sleep(time: 15, unit: 'SECONDS')
                 currentBuild.result = 'SUCCESS'
                }
