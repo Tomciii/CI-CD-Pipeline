@@ -36,7 +36,7 @@ pipeline {
                 // Serve the Angular app locally on port 4200
                script {
                try {
-                sh 'npm start'
+                sh 'npm start &'
                 currentBuild.result = 'SUCCESS'
                }
                catch (Exception e) {
