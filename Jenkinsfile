@@ -32,10 +32,20 @@ pipeline {
         }
 
         stage('Deploy to Localhost') {
-            steps {
-                // Serve the Angular app locally on port 4200
-                sh 'npm start'
-            }
+                   script {
+                       try {
+                           sh 'npm start'
+                           def isPortAvailable = sh(script: 'netstat -tuln | grep 4200', returnStatus: true)
+                           if (isPortAvailable == 0) {
+                               currentBuild.result = 'SUCCESS'
+                           } else {
+                               currentBuild.result = 'FAILURE'
+                           }
+                       } catch (Exception e) {
+                           currentBuild.result = 'FAILURE'
+                           throw e
+                       }
+                   }
         }
     }
 }
