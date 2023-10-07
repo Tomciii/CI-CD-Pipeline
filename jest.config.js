@@ -3,4 +3,5 @@ module.exports = {
   coverageReporters: ['lcov','clover','text','text-summary'],
   coverageDirectory: 'reports',
   clearMocks: true,
+  testMatch: ['**/*.spec.ts'],
 };
