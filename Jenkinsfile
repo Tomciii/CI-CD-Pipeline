@@ -34,8 +34,16 @@ pipeline {
         stage('Deploy to Localhost') {
             steps {
                 // Serve the Angular app locally on port 4200
+               script {
+               try {
                 sh 'npm start'
                 currentBuild.result = 'SUCCESS'
+               }
+               catch (Exception e) {
+               currentBuild = 'FAILURE'
+               throw e
+               }
+               }
             }
         }
     }
