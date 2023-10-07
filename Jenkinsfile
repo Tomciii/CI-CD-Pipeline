@@ -37,6 +37,7 @@ pipeline {
                script {
                try {
                 sh 'npm start &'
+                sleep(time: 15, unit: 'SECONDS')
                 currentBuild.result = 'SUCCESS'
                }
                catch (Exception e) {
