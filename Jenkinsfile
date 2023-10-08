@@ -30,7 +30,7 @@ pipeline {
             steps {
                script {
                  try {
-                      bat 'start cmd /c "npm start"'
+                      bat 'start /B cmd /c "npm start"'
                     sleep(time: 15, unit: 'SECONDS')
                     currentBuild.result = 'SUCCESS'
                  } catch (Exception e) {
