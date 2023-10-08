@@ -22,13 +22,13 @@ pipeline {
 
         stage('Build Angular App') {
             steps {
-                sh 'ng build --output-path docs --base-href /jenkins-app/'
+                sh 'npm run build'
             }
         }
 
         stage('Deploy to Localhost') {
             steps {
-                sh 'npx ngh --dir=docs/jenkins-app'
+                sh 'npx ngh --dir=dist/jenkins-app'
             }
         }
     }
