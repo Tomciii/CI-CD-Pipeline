@@ -28,16 +28,7 @@ pipeline {
 
         stage('Deploy to Localhost') {
             steps {
-               script {
-                 try {
-                      bat 'start /B cmd /c "npm start"'
-                    sleep(time: 15, unit: 'SECONDS')
-                    currentBuild.result = 'SUCCESS'
-                 } catch (Exception e) {
-                   currentBuild = 'FAILURE'
-                   throw e
-                 }
-               }
+                sh 'npx ngh --dir=dist/jenkins-app'
             }
         }
     }
