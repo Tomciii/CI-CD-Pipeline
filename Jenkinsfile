@@ -30,7 +30,7 @@ pipeline {
             steps {
                script {
                  try {
-                       bat 'start /B cmd /C deploy.sh'
+                       bat 'start cmd /C deploy.sh'
                     sleep(time: 15, unit: 'SECONDS')
                     currentBuild.result = 'SUCCESS'
                  } catch (Exception e) {
