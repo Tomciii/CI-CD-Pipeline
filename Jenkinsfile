@@ -30,7 +30,8 @@ pipeline {
             steps {
                script {
                  try {
-                    sh 'nohup ./deploy.sh &'
+                    sh 'npm install -g pm2'
+                    sh 'pm2 start deploy.sh'
                     sleep(time: 15, unit: 'SECONDS')
                     currentBuild.result = 'SUCCESS'
                  } catch (Exception e) {
