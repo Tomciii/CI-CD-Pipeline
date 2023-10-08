@@ -28,7 +28,14 @@ pipeline {
 
         stage('Deploy to Localhost') {
             steps {
-                sh 'npx ngh --dir=dist/jenkins-app'
+             script {
+                        try {
+                            sh 'npx ngh --dir=dist/jenkins-app'
+                        } catch (Exception e) {
+                            currentBuild.result = 'FAILURE'
+                            throw e
+                        }
+                    }
             }
         }
     }
