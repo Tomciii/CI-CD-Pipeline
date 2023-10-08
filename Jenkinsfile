@@ -30,7 +30,7 @@ pipeline {
             steps {
                script {
                  try {
-                    sh './deploy.sh &'
+                    sh 'nohup ./deploy.sh &'
                     sleep(time: 15, unit: 'SECONDS')
                     currentBuild.result = 'SUCCESS'
                  } catch (Exception e) {
