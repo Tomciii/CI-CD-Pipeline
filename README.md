@@ -1,4 +1,5 @@
-# WFP 2
+# How can a CI/CD workflow be implemented with Jenkins to run automated tests?
+This is the question I will try to solve with this repository. Project is done for my planned upcoming bachelor thesis with the research question above.
 For the sake of content, this frontend app will be a Gallery of Thomas' Art and Paintings. (https://www.instagram.com/tomcii/)
 
 Structure of the project:
