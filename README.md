@@ -1,10 +1,10 @@
 # WFP 2
+For the sake of content, this frontend app will be a Gallery of Thomas' Art and Paintings. (https://www.instagram.com/tomcii/)
 
 Structure of the project:
 
 # Frontend
 The repository consists of a Angular Frontend project including a Jenkinsfile. The frontend will be containerized via Docker.
-For the sake of content, this frontend app will be a Gallery of Thomas' Art and Paintings. ( https://www.instagram.com/tomcii/ )
 
 The content will be:
 - A Home page
