@@ -30,8 +30,16 @@ pipeline {
             steps {
              script {
                         try {
-                            sh 'npx ngh --dir=dist/jenkins-app'
-                            bat 'xcopy /s /y "dist\\jenkins-app\\*" "C:\\Users\\Tomcii\\Documents\\Coding\\Apache24\\htdocs\\"'
+                                 // Define the source directory containing the build files
+                                                   def sourceDirectory = 'dist/jenkins-app'
+
+                                                   // Define the target directory where you want to copy the build files
+                                                   def targetDirectory = 'C:/Users/Tomcii/Documents/Coding/Apache24/htdocs'
+
+                                                   // Copy the build files to the target directory
+                                                   bat "xcopy /s /y ${sourceDirectory} ${targetDirectory}"
+
+                                                   currentBuild.result = 'SUCCESS'
                         } catch (Exception e) {
                             currentBuild.result = 'FAILURE'
                             throw e
