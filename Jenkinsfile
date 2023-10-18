@@ -31,10 +31,10 @@ pipeline {
              script {
                         try {
                                  // Define the source directory containing the build files
-                                                   def sourceDirectory = 'dist/jenkins-app'
+                                                   def sourceDirectory = 'dist\\jenkins-app'
 
                                                    // Define the target directory where you want to copy the build files
-                                                   def targetDirectory = 'C:/Users/Tomcii/Documents/Coding/Apache24/htdocs'
+                                                   def targetDirectory = 'C:\\Users\\Tomcii\\Documents\\Coding\\Apache24\\htdocs'
 
                                                    // Copy the build files to the target directory
                                                    bat "xcopy /s /y ${sourceDirectory} ${targetDirectory}"
