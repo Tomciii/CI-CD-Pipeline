@@ -14,8 +14,8 @@ The content will be:
 
 # Jenkins
 A local Jenkins running on port 8080 will be used for the CI/CD.  <br>
-Jenkins.war runnable via ```java -jar jenkins.war```
+Jenkins.war runnable via cmd command ```java -jar jenkins.war```
 
 # Apache Server:
 Also locally running, an Apache server will deploy the frontend, triggered by the local Jenkins.  <br>
-Apache Service running on ``` 127.0.0.1```
+Apache Service running on ```127.0.0.1```
