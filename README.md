@@ -1,5 +1,5 @@
-# How can a CI/CD workflow be implemented with Jenkins to run automated tests?
-This is the question I will try to solve with this repository. Project is done for my planned upcoming bachelor thesis with the research question above.
+# "How can a CI/CD workflow be effectively implemented using Jenkins for web development projects?"
+This is the question I will try to solve with this repository. Project is done for my planned upcoming bachelor thesis with the research question above.  <br>
 For the sake of content, this frontend app will be a Gallery of Thomas' Art and Paintings. (https://www.instagram.com/tomcii/)
 
 Structure of the project:
@@ -13,7 +13,9 @@ The content will be:
 - An About Page
 
 # Jenkins
-A local Jenkins running on port 8080 will be used for the CI/CD.
+A local Jenkins running on port 8080 will be used for the CI/CD.  <br>
+Jenkins.war runnable via cmd command ```java -jar jenkins.war```
 
-# Apache Server
-Also locally running, an Apache server will deploy the frontend, triggered by the local Jenkins.
+# Apache Server:
+Also locally running, an Apache server will deploy the frontend, triggered by the local Jenkins.  <br>
+Apache Service running on ```127.0.0.1```
