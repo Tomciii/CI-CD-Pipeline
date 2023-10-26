@@ -20,20 +20,23 @@ pipeline {
             }
         }
 
-        stage('Build Angular App') {
+        stage('Build Frontend') {
             steps {
                 sh 'npm run build'
             }
         }
 
-        stage('Copy Files to Apache Server') {
+
+        stage('Deploy') {
             steps {
              script {
                         try {
+                            // copy files to Apache server
                               def sourceDirectory = 'dist\\jenkins-app'
                               def targetDirectory = 'C:\\Users\\Tomcii\\Documents\\Coding\\Apache24\\htdocs'
-                               bat "xcopy /s /y ${sourceDirectory} ${targetDirectory}"
-                               currentBuild.result = 'SUCCESS'
+
+                              bat "xcopy /s /y ${sourceDirectory} ${targetDirectory}"
+                              currentBuild.result = 'SUCCESS'
                         } catch (Exception e) {
                             currentBuild.result = 'FAILURE'
                             throw e
