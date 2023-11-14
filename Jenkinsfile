@@ -76,5 +76,18 @@ pipeline {
                 }
             }
         }
+
+        post {
+                    success {
+                        emailext subject: 'Success: Jenkins Job ${env.JOB_NAME} - Build #${env.BUILD_NUMBER}',
+                                  body: 'The Jenkins job has succeeded.\n\nCheck the build at ${env.BUILD_URL}',
+                                  to: 'Tomciiart@gmail.com'
+                    }
+                    failure {
+                        emailext subject: 'Failure: Jenkins Job ${env.JOB_NAME} - Build #${env.BUILD_NUMBER}',
+                                  body: 'The Jenkins job has failed.\n\nCheck the build at ${env.BUILD_URL}',
+                                  to: 'Tomciiart@gmail.com'
+                    }
+                }
     }
 }
