@@ -88,5 +88,5 @@ pipeline {
                                       to: 'Tomciiart@gmail.com'
                         }
         }
-    }
+
 }
