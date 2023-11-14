@@ -75,6 +75,7 @@ pipeline {
                     bat "xcopy /s /y ${sourceDirectory} ${targetDirectory}"
                 }
             }
+             }
             post {
                         success {
                             emailext subject: 'Success: Jenkins Job ${env.JOB_NAME} - Build #${env.BUILD_NUMBER}',
