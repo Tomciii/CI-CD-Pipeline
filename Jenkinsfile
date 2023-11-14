@@ -1,9 +1,9 @@
 pipeline {
     agent any
 
-    options {
-        pollingTaskSpec: 'H/1 * * * *'
-    }
+   triggers {
+          pollSCM('H/1 * * * *')
+      }
 
     stages {
         stage('Checkout') {
