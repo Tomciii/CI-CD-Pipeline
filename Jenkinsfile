@@ -76,7 +76,7 @@ pipeline {
                 }
             }
         }
-
+}
         post {
                     success {
                         emailext subject: 'Success: Jenkins Job ${env.JOB_NAME} - Build #${env.BUILD_NUMBER}',
@@ -89,5 +89,5 @@ pipeline {
                                   to: 'Tomciiart@gmail.com'
                     }
                 }
-    }
+
 }
