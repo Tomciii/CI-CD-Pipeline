@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    options {
+        pollingTaskSpec: 'H/1 * * * *'
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -32,7 +36,6 @@ pipeline {
                     def imageName = "your-docker-registry/your-app-name:${env.BUILD_ID}"
                     def dockerfile = 'Dockerfile'
 
-                    // Build the Docker image
                     sh "docker build -t ${imageName} -f ${dockerfile} ."
                 }
             }
@@ -43,7 +46,6 @@ pipeline {
                 script {
                     def imageName = "your-docker-registry/your-app-name:${env.BUILD_ID}"
 
-                    // Push the Docker image to a registry (optional)
                     sh "docker push ${imageName}"
                 }
             }
@@ -55,11 +57,8 @@ pipeline {
                     def containerName = "your-app-container-${env.BUILD_ID}"
                     def imageName = "your-docker-registry/your-app-name:${env.BUILD_ID}"
 
-                    // Stop and remove the existing container
                     sh "docker stop ${containerName} || true"
                     sh "docker rm ${containerName} || true"
-
-                    // Run the Docker container
                     sh "docker run -d -p 80:80 --name ${containerName} ${imageName}"
                 }
             }
@@ -71,7 +70,6 @@ pipeline {
                     def sourceDirectory = 'dist/jenkins-app'
                     def targetDirectory = 'C:\\Users\\Tomcii\\Documents\\Coding\\Apache24\\htdocs'
 
-                    // Copy files to Apache server
                     bat "xcopy /s /y ${sourceDirectory} ${targetDirectory}"
                 }
             }
