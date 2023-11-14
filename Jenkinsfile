@@ -30,6 +30,7 @@ pipeline {
             }
         }
 
+        /*
         stage('Build Docker Image') {
             steps {
                 script {
@@ -63,6 +64,7 @@ pipeline {
                 }
             }
         }
+        */
 
         stage('Copy to Apache Server') {
             steps {
