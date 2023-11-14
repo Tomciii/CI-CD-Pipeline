@@ -69,7 +69,7 @@ pipeline {
         stage('Copy to Apache Server') {
             steps {
                 script {
-                    def sourceDirectory = 'dist/jenkins-app'
+                    def sourceDirectory = 'dist\\jenkins-app'
                     def targetDirectory = 'C:\\Users\\Tomcii\\Documents\\Coding\\Apache24\\htdocs'
 
                     bat "xcopy /s /y ${sourceDirectory} ${targetDirectory}"
