@@ -5,7 +5,7 @@ For the sake of content, this frontend app will be a Gallery of Thomas' Art and 
 Structure of the project:
 
 # Frontend
-The repository consists of a Angular Frontend project including a Jenkinsfile. The frontend will be containerized via Docker.
+The repository consists of a Angular Frontend project including a Jenkinsfile. The frontend should be containerized via Docker.
 
 The content will be:
 - A Home page
@@ -18,4 +18,6 @@ Jenkins.war runnable via cmd command ```java -jar jenkins.war```
 
 # Apache Web Server:
 Also locally running, an Apache Web Server will deploy the frontend, triggered by the local Jenkins.  <br>
-Apache Service running locally on ```127.0.0.1```
+The services are required to be running for the deployment to work properly. <br>
+Master Branch: Apache Service running locally on ```127.0.0.1:80``` <br>
+Every Other Branch: Apache Service running locally on ```127.0.0.1:81``` <br>
