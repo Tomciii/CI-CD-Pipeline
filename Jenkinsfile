@@ -68,21 +68,8 @@ pipeline {
         stage('Copy to Apache Server') {
             steps {
                 script {
-
-                def userInput = input(
-                                        message: 'Select deployment environment:',
-                                        parameters: [
-                                            choice(choices: 'Test\nProd', description: 'Select deployment environment', name: 'DEPLOY_ENV')
-                                        ]
-                                    )
-
-
                     def sourceDirectory = 'dist\\jenkins-app'
                     def targetDirectory = 'C:\\Users\\Tomcii\\Documents\\Coding\\Apache24\\htdocs'
-
-                     if (userInput == 'Test') {
-                        targetDirectory = 'C:\\Users\\Tomcii\\Documents\\Coding\\Apache24\\htdocs'
-                     }
 
                     bat "xcopy /s /y ${sourceDirectory} ${targetDirectory}"
                 }
