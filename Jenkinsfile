@@ -75,7 +75,7 @@ pipeline {
                      def targetDirectory
                                         if (currentBranch == 'master') {
                                             targetDirectory = 'C:\\Users\\Tomcii\\Documents\\Coding\\Apache24\\htdocs'
-                                        }
+                                        }else {
                                             targetDirectory = 'C:\\Users\\Tomcii\\Documents\\Coding\\Apache24_2\\htdocs'
                                         }
 
