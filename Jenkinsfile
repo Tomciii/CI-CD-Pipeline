@@ -68,8 +68,16 @@ pipeline {
         stage('Copy to Apache Server') {
             steps {
                 script {
+                 def currentBranch = env.BRANCH_NAME
+
                     def sourceDirectory = 'dist\\jenkins-app'
-                    def targetDirectory = 'C:\\Users\\Tomcii\\Documents\\Coding\\Apache24\\htdocs'
+
+                     def targetDirectory
+                                        if (currentBranch == 'master') {
+                                            targetDirectory = 'C:\\Users\\Tomcii\\Documents\\Coding\\Apache24\\htdocs'
+                                        }
+                                            targetDirectory = 'C:\\Users\\Tomcii\\Documents\\Coding\\Apache24_2\\htdocs'
+                                        }
 
                     bat "xcopy /s /y ${sourceDirectory} ${targetDirectory}"
                 }
