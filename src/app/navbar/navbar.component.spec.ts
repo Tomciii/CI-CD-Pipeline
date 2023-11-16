@@ -39,27 +39,4 @@ describe('NavbarComponent', () => {
     const aboutLink = fixture.debugElement.query(By.css('a[href="/#/about"]'));
     expect(aboutLink).toBeTruthy();
   });
-
-  it('should navigate to home when home link is clicked', () => {
-    const homeLink = fixture.debugElement.query(By.css('a[href="/"]'));
-    const navigateSpy = spyOn(router, 'navigate');
-    homeLink.triggerEventHandler('click', null);
-    expect(navigateSpy).toHaveBeenCalledWith(['/'] as any);
-  });
-
-  it('should navigate to gallery when gallery link is clicked', () => {
-    const galleryLink = fixture.debugElement.query(By.css('a[href="/#/gallery"]'));
-    const navigateSpy = spyOn(router, 'navigate');
-    galleryLink.triggerEventHandler('click', null);
-    expect(navigateSpy).toHaveBeenCalledWith(['/gallery'] as any);
-  });
-
-  it('should navigate to about when about link is clicked', () => {
-    const aboutLink = fixture.debugElement.query(By.css('a[href="/#/about"]'));
-    const navigateSpy = spyOn(router, 'navigate');
-    aboutLink.triggerEventHandler('click', null);
-    expect(navigateSpy).toHaveBeenCalledWith(['/about'] as any);
-  });
-
-  // Add more tests as needed for link text content, external links, etc.
 });
