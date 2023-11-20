@@ -5,7 +5,7 @@ For the sake of content, this frontend app will be a Gallery of Thomas' Art and 
 Structure of the project:
 
 # Frontend
-The repository consists of a Angular Frontend project including a Jenkinsfile. The frontend should be containerized via Docker.
+The repository consists of a Angular Frontend project including a Jenkinsfile.
 
 The content will be:
 - A Home page
