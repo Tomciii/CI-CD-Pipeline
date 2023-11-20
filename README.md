@@ -13,7 +13,7 @@ The content will be:
 - An About Page
 
 # Jenkins
-A local Jenkins running on port 8080 will be used for the CI/CD.  <br>
+A local Jenkins running on ```localhost:8080``` will be used for the CI/CD.  <br>
 Jenkins.war runnable via cmd command ```java -jar jenkins.war```
 
 # Apache Web Server:
